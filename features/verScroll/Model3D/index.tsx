@@ -1,11 +1,12 @@
 "use client";
+import { LINK_SPLINE_MODEL } from "@/config/environment";
 import Spline from "@splinetool/react-spline";
 import React from "react";
 
 const Model3DSpin = () => {
   return (
     <Spline
-      scene="https://prod.spline.design/L6RSsVwum2iHkEWb/scene.splinecode"
+      scene={LINK_SPLINE_MODEL}
       style={{
         width: "100%",
         height: "100%",
