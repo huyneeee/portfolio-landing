@@ -19,6 +19,8 @@ const HEIGHT_RANGE_SCROLL = {
   }
 };
 
+const HEIGHT_ONE_FRAME_SCROLL = 1500; // 1500px height div for scroll;
+
 const VARIANTS_FADE_IN: AnimationProps["variants"] = {
   hidden: {
     opacity: 0,
@@ -35,4 +37,4 @@ const TRANSITION_FADE_IN: AnimationProps["transition"] = {
   ease: "linear"
 };
 
-export { HEIGHT_RANGE_SCROLL, VARIANTS_FADE_IN, TRANSITION_FADE_IN };
+export { HEIGHT_RANGE_SCROLL, VARIANTS_FADE_IN, TRANSITION_FADE_IN, HEIGHT_ONE_FRAME_SCROLL };

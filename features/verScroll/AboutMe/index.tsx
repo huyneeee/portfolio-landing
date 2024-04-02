@@ -3,72 +3,108 @@ import { useWindowSizeCtx } from "@/shared/contexts/WindowSizeCtx";
 import { useScroll, useTransform, m } from "framer-motion";
 import React from "react";
 import Image from "next/image";
-import { HEIGHT_AVATAR, WIDTH_AVATAR, HEIGHT_DESCRIPTION } from "@/constant/about";
-import { HEIGHT_RANGE_SCROLL } from "@/config/animations";
-import { PADDING_LAYOUT } from "@/config/layout";
+import {
+  HEIGHT_AVATAR,
+  WIDTH_AVATAR,
+  HEIGHT_DESCRIPTION,
+  HEIGHT_AVATAR_MAX,
+  WIDTH_AVATAR_MAX
+} from "@/constant/about";
+import { HEIGHT_ONE_FRAME_SCROLL, HEIGHT_RANGE_SCROLL } from "@/config/animations";
+import { HEIGHT_HEADER, PADDING_LAYOUT } from "@/config/layout";
 import { MARGIN_TOP_TEXT_RIGHT, MAX_FONT } from "@/constant/mainhero";
 import { convertTextToNumber } from "@/shared/utils/function";
+
+const POINT_SHOW_TEXT_ABOUT = 0.8;
+
+const ABOUT_ME = `I aim to leverage my experience and skills to contribute effectively to the development of
+innovative and user-centric web applications.`;
 
 const AboutMeTextLinear = () => {
   const { height } = useWindowSizeCtx();
   const { scrollY } = useScroll();
 
-  // const haftHeight = height / 2;
-  const endScrollState3 = HEIGHT_RANGE_SCROLL.state_3.to * height;
-  const endScrollState1 = HEIGHT_RANGE_SCROLL.state_1.to * height;
+  const haftHeightScreen = height / 2 - HEIGHT_HEADER;
 
-  const xImageAvatar = useTransform(
-    scrollY,
-    [0, endScrollState1],
-    [-WIDTH_AVATAR - PADDING_LAYOUT, PADDING_LAYOUT / 2]
+  const rangeHeightMainHero = [0, HEIGHT_ONE_FRAME_SCROLL];
+  const endScrollState4 = HEIGHT_RANGE_SCROLL.state_4.to * HEIGHT_ONE_FRAME_SCROLL;
+  const endScrollState3 = HEIGHT_RANGE_SCROLL.state_4.from * HEIGHT_ONE_FRAME_SCROLL;
+
+  const xImageAvatar = useTransform(scrollY, rangeHeightMainHero, [
+    -WIDTH_AVATAR - PADDING_LAYOUT,
+    0
+  ]);
+
+  const opacityAvatar = useTransform(scrollY, rangeHeightMainHero, [0, 1]);
+
+  const initialYAxisTextAbout = -(
+    HEIGHT_RANGE_SCROLL.state_2.to * HEIGHT_ONE_FRAME_SCROLL -
+    haftHeightScreen +
+    HEIGHT_DESCRIPTION / 2
   );
-
-  const opacityImage = useTransform(scrollY, [0, endScrollState1], [0, 1]);
 
   const yText = useTransform(
     scrollY,
-    [0, endScrollState3],
-    [-height - HEIGHT_DESCRIPTION * 2, -height - HEIGHT_DESCRIPTION * 2 + endScrollState3]
+    [0, endScrollState4],
+    [initialYAxisTextAbout, initialYAxisTextAbout + endScrollState4]
   );
 
   const inputRangeShowText = [
     0,
-    (HEIGHT_RANGE_SCROLL.state_2.from + 0.2) * height,
-    (HEIGHT_RANGE_SCROLL.state_2.to - 0.5) * height
+    (HEIGHT_RANGE_SCROLL.state_2.from + POINT_SHOW_TEXT_ABOUT) * HEIGHT_ONE_FRAME_SCROLL,
+    HEIGHT_RANGE_SCROLL.state_2.to * HEIGHT_ONE_FRAME_SCROLL
   ];
 
   const opacityText = useTransform(scrollY, inputRangeShowText, [0, 0, 0.3]);
+  const xText = useTransform(scrollY, inputRangeShowText, [PADDING_LAYOUT, PADDING_LAYOUT, 0]);
 
-  const heightImage = useTransform(
+  const heightAvatar = useTransform(
     scrollY,
     [inputRangeShowText[1], inputRangeShowText[2]],
-    [HEIGHT_AVATAR, height - PADDING_LAYOUT * 2]
+    [HEIGHT_AVATAR, HEIGHT_AVATAR_MAX]
+  );
+  const widthAvatar = useTransform(
+    scrollY,
+    [inputRangeShowText[1], inputRangeShowText[2]],
+    [WIDTH_AVATAR, WIDTH_AVATAR_MAX]
   );
 
-  // const valueIncreaseHeightImage = heightImage.get() - HEIGHT_AVATAR;
   const maxHeightText = convertTextToNumber(MAX_FONT);
 
-  const initialHeightAvatar = -height - HEIGHT_AVATAR - maxHeightText * 2 + MARGIN_TOP_TEXT_RIGHT;
+  const initialHeightAvatar = -(
+    HEIGHT_RANGE_SCROLL.state_2.to * HEIGHT_ONE_FRAME_SCROLL -
+    haftHeightScreen -
+    maxHeightText +
+    MARGIN_TOP_TEXT_RIGHT +
+    HEIGHT_HEADER
+  );
 
   const yImageAvatar = useTransform(
     scrollY,
-    [0, endScrollState3],
-    [initialHeightAvatar, initialHeightAvatar + endScrollState3]
+    [0, inputRangeShowText[1], inputRangeShowText[2], endScrollState4],
+    [
+      initialHeightAvatar,
+      initialHeightAvatar + inputRangeShowText[1],
+      initialHeightAvatar + inputRangeShowText[2] - (height / 2 - heightAvatar.get() / 2),
+      initialHeightAvatar + endScrollState4 - (height / 2 - heightAvatar.get() / 2)
+    ]
   );
 
   return (
-    <div className="relative h-screen w-full bg-gray-400">
+    <div
+      className="relative w-full bg-gray-400"
+      style={{
+        height: 2 * HEIGHT_ONE_FRAME_SCROLL
+      }}>
       <m.div
         className="relative z-10 h-[350px] w-[250px]"
         style={{
           y: yImageAvatar,
           x: xImageAvatar,
-          opacity: opacityImage,
-          height: heightImage
-          // height: HEIGHT_AVATAR,
-          // width: WIDTH_AVATAR
-        }}
-      >
+          opacity: opacityAvatar,
+          height: heightAvatar,
+          width: widthAvatar
+        }}>
         <Image
           src="/images/avatar.png"
           alt="avatar"
@@ -77,11 +113,9 @@ const AboutMeTextLinear = () => {
         />
       </m.div>
       <m.div
-        className="absolute right-0 top-0 z-10 max-w-[670px] text-[53px] font-medium leading-[53px] text-main-white"
-        style={{ y: yText, opacity: opacityText }}
-      >
-        I aim to leverage my experience and skills to contribute effectively to the development of
-        innovative and user-centric web applications.
+        className="absolute right-0 top-0 z-10 max-w-[670px] text-balance text-[53px] font-medium leading-[53px] text-main-white"
+        style={{ y: yText, x: xText, opacity: opacityText }}>
+        {ABOUT_ME}
       </m.div>
     </div>
   );
