@@ -18,6 +18,7 @@ import {
 import { HEIGHT_ONE_FRAME_SCROLL, TRANSITION_FADE_IN, VARIANTS_FADE_IN } from "@/config/animations";
 import { WIDTH_AVATAR } from "@/constant/about";
 import { convertTextToNumber } from "@/shared/utils/function";
+import useGetMotionValue from "@/shared/hooks/useGetMotionValue";
 
 const MainHero = () => {
   const { scrollY } = useScroll();
@@ -34,9 +35,10 @@ const MainHero = () => {
   const sizeBoxMiddle = useTransform(scrollY, inputRange, [MAX_WIDTH_BOX, MIN_WIDTH_BOX]);
   const sizeText = useTransform(scrollY, inputRange, [MIN_FONT, MAX_FONT]);
 
-  const valueMotionText = convertTextToNumber(sizeText.get());
+  const valueMotionText = convertTextToNumber(useGetMotionValue(sizeText, MIN_FONT));
+  const valueSizeBoxTF = useGetMotionValue(sizeBoxMiddle, MAX_WIDTH_BOX);
 
-  const yMiddleInput = haftHeightScreen - sizeBoxMiddle.get() / 2;
+  const yMiddleInput = haftHeightScreen - valueSizeBoxTF / 2;
   const yMiddle = useTransform(scrollY, inputRange, [
     yMiddleInput,
     yMiddleInput - MARGIN_TOP_TEXT_RIGHT - valueMotionText + inputRange[1]
