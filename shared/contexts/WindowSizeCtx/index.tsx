@@ -8,8 +8,8 @@ type WindowSizeCtxType = {
 };
 
 const WindowSizeCtx = createContext<WindowSizeCtxType>({
-  width: 0,
-  height: 0
+  width: 1000,
+  height: 800
 });
 
 const WindowSizeCtxProvider = (props: PropsWithChildren) => {

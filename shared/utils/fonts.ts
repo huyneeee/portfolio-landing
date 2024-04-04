@@ -42,5 +42,6 @@ export const neueHaasFont = localFont({
       weight: "900",
       style: "normal"
     }
-  ]
+  ],
+  preload: true
 });

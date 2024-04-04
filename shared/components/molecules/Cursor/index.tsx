@@ -1,6 +1,6 @@
 "use client";
 import { useFollowPointer } from "@/shared/hooks/useFollowPointer";
-import { m } from "framer-motion";
+import { m } from "@/shared/components/atoms/framer-motion";
 import React, { useRef } from "react";
 
 const CursorCustom = () => {
@@ -10,7 +10,7 @@ const CursorCustom = () => {
   return (
     <m.div
       ref={ref}
-      className="h-[30px] w-[30px] rounded-full bg-main-white"
+      className="z-[9999999] h-[30px] w-[30px] rounded-full bg-main-white"
       animate={{ x, y }}
       transition={{
         type: "spring",

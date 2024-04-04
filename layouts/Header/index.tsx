@@ -1,4 +1,6 @@
 import React from "react";
+import Time from "./Time";
+import TextMail from "./TextMail";
 
 const Header = () => {
   return (
@@ -8,14 +10,12 @@ const Header = () => {
       </div>
 
       <div className="header__time relative">
-        <div className="absolute top-[-25px] w-max rounded-[30px] border border-main-gray px-[16px] py-[12px] text-base text-main-white">
-          04:51 PM
-        </div>
+        <Time />
       </div>
 
       <div className="header__mail flex items-center gap-1">
         <p className="text-base text-main-white">say hi - </p>
-        <p className="text-base text-main-lightgray"> huynq.webdev@gmail.com</p>
+        <TextMail />
       </div>
     </header>
   );

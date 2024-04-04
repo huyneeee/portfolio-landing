@@ -1,6 +1,6 @@
 "use client";
 import { useWindowSizeCtx } from "@/shared/contexts/WindowSizeCtx";
-import { m, useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import Model3DSpin from "../Model3D";
 import { HEIGHT_HEADER, PADDING_LAYOUT } from "@/config/layout";
 import {
@@ -18,6 +18,8 @@ import {
 import { HEIGHT_ONE_FRAME_SCROLL, TRANSITION_FADE_IN, VARIANTS_FADE_IN } from "@/config/animations";
 import { WIDTH_AVATAR } from "@/constant/about";
 import { convertTextToNumber } from "@/shared/utils/function";
+import useGetMotionValue from "@/shared/hooks/useGetMotionValue";
+import { m } from "@/shared/components/atoms/framer-motion";
 
 const MainHero = () => {
   const { scrollY } = useScroll();
@@ -34,9 +36,10 @@ const MainHero = () => {
   const sizeBoxMiddle = useTransform(scrollY, inputRange, [MAX_WIDTH_BOX, MIN_WIDTH_BOX]);
   const sizeText = useTransform(scrollY, inputRange, [MIN_FONT, MAX_FONT]);
 
-  const valueMotionText = convertTextToNumber(sizeText.get());
+  const valueMotionText = convertTextToNumber(useGetMotionValue(sizeText, MIN_FONT));
+  const valueSizeBoxTF = useGetMotionValue(sizeBoxMiddle, MAX_WIDTH_BOX);
 
-  const yMiddleInput = haftHeightScreen - sizeBoxMiddle.get() / 2;
+  const yMiddleInput = haftHeightScreen - valueSizeBoxTF / 2;
   const yMiddle = useTransform(scrollY, inputRange, [
     yMiddleInput,
     yMiddleInput - MARGIN_TOP_TEXT_RIGHT - valueMotionText + inputRange[1]

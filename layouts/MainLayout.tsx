@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import Header from "./Header";
-import CursorCustom from "@/shared/components/molecules/Cursor";
+// import CursorCustom from "@/shared/components/molecules/Cursor";
 
 const MainLayout = ({ children }: PropsWithChildren) => {
   return (
