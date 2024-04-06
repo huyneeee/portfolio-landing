@@ -1,0 +1,38 @@
+@layer components {
+  .text-main-hero {
+    @media (min-width: 1440px) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      font-size: calc(15px + (19 - 15) * ((100vw - 1024px) / (1440 - 1024)));
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 16px;
+    }
+
+    @apply max-lg:text-[35px] max-lg:font-medium max-lg:uppercase max-lg:text-main-white;
+  }
+
+  .text-about-us {
+    @media (min-width: 1280px) {
+      font-size: 53px;
+      line-height: 53px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      font-size: calc(40px + (52 - 40) * ((100vw - 1024px) / (1280 - 1024)));
+      line-height: calc(40px + (52 - 40) * ((100vw - 1024px) / (1280 - 1024)));
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+    @apply font-medium  text-main-white;
+  }
+}
+
+/* calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))) */

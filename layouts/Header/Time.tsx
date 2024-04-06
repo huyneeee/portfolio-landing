@@ -25,7 +25,7 @@ const Time = () => {
   }, []);
 
   return (
-    <div className="absolute top-[-25px] w-max rounded-[30px] border border-main-gray px-[16px] py-[12px] text-base text-main-white">
+    <div className="absolute top-[-10px] w-max rounded-[30px] border border-main-gray px-[16px] py-[12px] text-base text-main-white max-lg:leading-3 lg:top-[-25px]">
       {time}
     </div>
   );

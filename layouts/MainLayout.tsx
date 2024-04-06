@@ -4,7 +4,7 @@ import Header from "./Header";
 
 const MainLayout = ({ children }: PropsWithChildren) => {
   return (
-    <main className="mx-auto max-w-[1440px] overflow-hidden bg-black px-[40px]">
+    <main className="mx-auto max-w-[1440px] overflow-hidden bg-black px-[15px] lg:px-[40px]">
       <Header />
       {children}
       {/* <CursorCustom /> */}

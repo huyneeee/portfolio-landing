@@ -8,6 +8,7 @@ type IPropsWordByWordAnimate = {
   xText: MotionValue<number>;
   startScrollY: number;
   inputRangeShowText: number[];
+  distanceScroll?: number;
 };
 
 const WordByWordAnimate = ({
@@ -15,18 +16,19 @@ const WordByWordAnimate = ({
   yText,
   xText,
   startScrollY,
-  inputRangeShowText
+  inputRangeShowText,
+  distanceScroll = HEIGHT_ONE_FRAME_SCROLL
 }: IPropsWordByWordAnimate) => {
   const { scrollY } = useScroll();
   const words = text.split(" ");
   const lengthText = text.length;
-  const oneHeightTextScroll = HEIGHT_ONE_FRAME_SCROLL / lengthText;
+  const oneHeightTextScroll = distanceScroll / lengthText;
 
   let lastIndex = 1;
 
   return (
     <m.div
-      className="absolute right-0 top-0 z-10 flex max-w-[681px] flex-wrap  text-[53px] font-medium leading-[53px] text-main-white"
+      className="text-about-us absolute right-0 top-0 z-10 flex flex-wrap lg:max-w-[500px] xl:max-w-[681px]"
       style={{ y: yText, x: xText }}>
       {words.map((word, keyWord) => {
         if (keyWord > 0) {

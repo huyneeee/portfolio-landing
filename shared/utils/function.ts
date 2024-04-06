@@ -1,3 +1,3 @@
-export const convertTextToNumber = (fontSize: string): number => {
-  return +fontSize.replace("px", "");
+export const convertTextToNumber = (fontSize: string, unit = "em"): number => {
+  return +fontSize.replace(unit, "");
 };
