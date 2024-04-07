@@ -1,5 +1,4 @@
 "use client";
-import { HEIGHT_ONE_FRAME_SCROLL } from "@/config/animations";
 import { m } from "@/shared/components/atoms/framer-motion";
 import WordByWordAnimate from "@/shared/components/molecules/WordByWord";
 import Image from "next/image";
@@ -9,7 +8,7 @@ const ABOUT_ME = `I aim to leverage my experience and skills to contribute effec
 
 const Desktop = () => {
   const { motionAvatarDesktop, motionTextDesktop, inputRangeShowText } = MotionAnimation();
-  const { widthAvatar, yImageAvatar, xImageAvatar, opacityAvatar, heightAvatar } =
+  const { widthAvatar, yImageAvatar, xImageAvatar, opacityAvatar, heightAvatar, heightScroll } =
     motionAvatarDesktop();
   const { xText, yText } = motionTextDesktop();
 
@@ -17,8 +16,9 @@ const Desktop = () => {
     <div
       className="relative w-full"
       style={{
-        height: 2 * HEIGHT_ONE_FRAME_SCROLL
-      }}>
+        height: heightScroll
+      }}
+    >
       <m.div
         className="relative z-10 h-[350px] w-[250px] rounded-md bg-main-white"
         style={{
@@ -27,7 +27,8 @@ const Desktop = () => {
           opacity: opacityAvatar,
           height: heightAvatar,
           width: widthAvatar
-        }}>
+        }}
+      >
         <Image src="/images/avatar.png" alt="avatar" fill className="object-cover" />
       </m.div>
 

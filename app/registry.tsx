@@ -1,6 +1,5 @@
 "use client";
 
-import MainLayout from "@/layouts/MainLayout";
 import { LazyMotionContainer } from "@/shared/container/LazyMotionContainer";
 import { WindowSizeCtxProvider } from "@/shared/contexts/WindowSizeCtx";
 import Lenis from "@studio-freight/lenis";
@@ -10,7 +9,9 @@ export const Registry = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const lenis = new Lenis();
 
-    lenis.on("scroll", (e: any) => {});
+    lenis.on("scroll", (e: any) => {
+      console.log("e", e.targetScroll);
+    });
 
     function raf(time: any) {
       lenis.raf(time);
@@ -22,9 +23,7 @@ export const Registry = ({ children }: PropsWithChildren) => {
 
   return (
     <WindowSizeCtxProvider>
-      <LazyMotionContainer>
-        <MainLayout>{children}</MainLayout>
-      </LazyMotionContainer>
+      <LazyMotionContainer>{children}</LazyMotionContainer>
     </WindowSizeCtxProvider>
   );
 };

@@ -7,7 +7,7 @@ const ABOUT_ME = `I aim to leverage my experience and skills to contribute effec
 
 const Mobile = () => {
   const { motionAvatarMobile, motionTextMobile } = MotionAnimation();
-  const { sizeAvatar, inputRangeShowTextMB, yBoxAvatar, inputRangeAllAnimation } =
+  const { sizeAvatar, inputRangeShowTextMB, yBoxAvatar, inputRangeAllAnimation, heightScroll } =
     motionAvatarMobile();
   const { xText } = motionTextMobile();
 
@@ -15,18 +15,21 @@ const Mobile = () => {
     <div
       className="relative w-full"
       style={{
-        height: inputRangeAllAnimation[2]
-      }}>
+        height: heightScroll
+      }}
+    >
       <m.div
         className="flex w-full items-start justify-center bg-main-darkgray "
         style={{
           y: yBoxAvatar
-        }}>
+        }}
+      >
         <m.div
           className="relative z-10 mx-auto w-full rounded-md bg-main-white"
           style={{
             height: sizeAvatar
-          }}>
+          }}
+        >
           <Image src="/images/avatar.png" alt="avatar" fill className="object-cover" />
         </m.div>
       </m.div>

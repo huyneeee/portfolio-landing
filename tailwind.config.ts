@@ -17,7 +17,8 @@ const config: Config = {
           blue: "#bed5e5",
           lightgray: "#6d6d6d",
           gray: "#202020",
-          darkgray: "#1b1b1b"
+          darkgray: "#1b1b1b",
+          orange: "#ff5555"
         }
       },
       backgroundImage: {

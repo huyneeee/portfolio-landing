@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(neueHaasFont.className)}>
+      <body className={clsx(neueHaasFont.className, "bg-black")}>
         <Registry>{children}</Registry>
       </body>
     </html>

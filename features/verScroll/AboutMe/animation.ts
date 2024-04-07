@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { HEIGHT_ONE_FRAME_SCROLL, HEIGHT_RANGE_SCROLL } from "@/config/animations";
 import { HEIGHT_HEADER, PADDING_LAYOUT } from "@/config/layout";
 import {
@@ -24,12 +25,12 @@ export const MotionAnimation = () => {
   const { scrollY } = useScroll();
 
   const haftHeightScreen = height / 2 - HEIGHT_HEADER;
-  const endScrollState4 = HEIGHT_RANGE_SCROLL.state_4.to * HEIGHT_ONE_FRAME_SCROLL;
   const inputRangeShowText = [
     0,
     (HEIGHT_RANGE_SCROLL.state_2.from + POINT_SHOW_TEXT_ABOUT) * HEIGHT_ONE_FRAME_SCROLL,
     HEIGHT_RANGE_SCROLL.state_2.to * HEIGHT_ONE_FRAME_SCROLL
   ];
+  const endScrollDesktop = inputRangeShowText[2] + HEIGHT_ONE_FRAME_SCROLL;
 
   const motionAvatarDesktop = () => {
     const heightAvatar = useTransform(
@@ -53,12 +54,12 @@ export const MotionAnimation = () => {
 
     const yImageAvatar = useTransform(
       scrollY,
-      [0, inputRangeShowText[1], inputRangeShowText[2], endScrollState4],
+      [0, inputRangeShowText[1], inputRangeShowText[2], endScrollDesktop],
       [
         initialHeightAvatar + bonusHeightScrollYState1,
         initialHeightAvatar + bonusHeightScrollYState1 + inputRangeShowText[1],
         initialHeightAvatar + inputRangeShowText[2],
-        initialHeightAvatar + endScrollState4
+        initialHeightAvatar + endScrollDesktop
       ]
     );
 
@@ -74,7 +75,8 @@ export const MotionAnimation = () => {
       xImageAvatar,
       widthAvatar,
       heightAvatar,
-      opacityAvatar
+      opacityAvatar,
+      heightScroll: endScrollDesktop - inputRangeShowText[1] + haftHeightScreen
     };
   };
 
@@ -87,8 +89,8 @@ export const MotionAnimation = () => {
     const xText = useTransform(scrollY, inputRangeShowText, [PADDING_LAYOUT, PADDING_LAYOUT, 0]);
     const yText = useTransform(
       scrollY,
-      [0, endScrollState4],
-      [initialYAxisTextAbout, initialYAxisTextAbout + endScrollState4]
+      [0, endScrollDesktop],
+      [initialYAxisTextAbout, initialYAxisTextAbout + endScrollDesktop]
     );
 
     return {
@@ -127,14 +129,13 @@ export const MotionAnimation = () => {
       sizeAvatar,
       yBoxAvatar,
       inputRangeShowTextMB,
-      inputRangeAllAnimation
+      inputRangeAllAnimation,
+      heightScroll: endStateScrollMobile - inputRangeAllAnimation[0] + fromHeightScrollState
     };
   };
 
   const motionTextMobile = () => {
     const xText = useMotionValue(0);
-
-    // const yText = useTransform(scrollY, [])
 
     return {
       xText
