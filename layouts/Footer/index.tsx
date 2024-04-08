@@ -1,12 +1,26 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Process from "./Process";
+import Hamburger from "./Hamburger";
+import MenuMobile from "./MenuMobile";
 
 const Footer = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleToggle = () => {
+    setOpen((prev) => !prev);
+  };
+
   return (
-    <footer className="footer fixed bottom-[10px] left-[15px] z-[9999] overflow-hidden rounded-[20px] border border-main-lightgray bg-black pl-[30px] lg:left-[40px]">
-      <div className="relative z-[9999] flex h-[60px] w-full items-center justify-between">
-        <Link href="/" className="w-fit text-sm font-medium text-main-white bg-blend-difference">
+    <footer className="footer fixed bottom-[10px] left-[15px] z-[9999] overflow-hidden rounded-[20px] border border-main-lightgray bg-black pl-[15px] lg:left-[40px] lg:pl-[30px]">
+      <MenuMobile open={open} />
+      <div className="max relative z-[9999] flex h-[60px] w-full items-center justify-between">
+        <Hamburger open={open} onToggle={handleToggle} />
+        <Link
+          href="/"
+          className="w-fit text-sm font-medium text-main-white bg-blend-difference max-lg:hidden"
+        >
           Personal portfolio © 2024
         </Link>
         <Link href="/about" className="w-fit text-sm font-medium text-main-white max-lg:hidden">

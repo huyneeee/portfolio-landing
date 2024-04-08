@@ -14,3 +14,12 @@ export const IconArrow = () => {
     </svg>
   );
 };
+
+export const IconArrowRotate = () => (
+  <svg width="13" height="13" fill="currentColor">
+    <path
+      d="M.354 0h12v12h-1V1.707L.707 12.354 0 11.646 10.646 1H.354V0Z"
+      clipRule="evenodd"
+    ></path>
+  </svg>
+);
