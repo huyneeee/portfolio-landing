@@ -3,6 +3,7 @@ import { m } from "@/shared/components/atoms/framer-motion";
 import WordByWordAnimate from "@/shared/components/molecules/WordByWord";
 import Image from "next/image";
 import { MotionAnimation } from "./animation";
+import Avatar from "@/public/images/avatar.png";
 
 const ABOUT_ME = `I aim to leverage my experience and skills to contribute effectively to the development of innovative and user-centric web applications.`;
 
@@ -29,7 +30,7 @@ const Desktop = () => {
           width: widthAvatar
         }}
       >
-        <Image src="/images/avatar.png" alt="avatar" fill className="object-cover" />
+        <Image src={Avatar} alt="avatar" priority fill className="object-cover" />
       </m.div>
 
       <WordByWordAnimate
