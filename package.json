@@ -15,6 +15,7 @@
     "@splinetool/runtime": "^1.0.91",
     "@studio-freight/lenis": "^1.0.42",
     "@vercel/otel": "^1.8.1",
+    "@vercel/speed-insights": "^1.0.10",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.14",
     "matter-js": "^0.19.0",
