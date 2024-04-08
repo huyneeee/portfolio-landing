@@ -52,7 +52,7 @@ const MenuMobile = ({ open = false }) => {
         duration: 0.3,
         ease: "easeInOut"
       }}
-      className="relative z-[9999]"
+      className="relative z-[9999] lg:hidden"
     >
       <p className="text-sm font-medium text-main-white">Nguyen Quang Huy ©</p>
       <div className="mt-5 flex flex-col gap-2">
