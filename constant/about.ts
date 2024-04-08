@@ -14,6 +14,8 @@ const POINT_SHOW_TEXT_ABOUT_MOBILE = 0.6;
 const HEIGHT_AVATAR_MOBILE_MAX = 450;
 const HEIGHT_AVATAR_MOBILE_MIN = 225;
 
+const ABOUT_ME_TEXT = `I aim to leverage my experience and skills to contribute effectively to the development of innovative and user-centric web applications.`;
+
 export {
   WIDTH_AVATAR,
   HEIGHT_AVATAR,
@@ -25,5 +27,6 @@ export {
   HEIGHT_DESCRIPTION_MOBILE,
   HEIGHT_AVATAR_MOBILE_MAX,
   HEIGHT_AVATAR_MOBILE_MIN,
-  POINT_SHOW_TEXT_ABOUT_MOBILE
+  POINT_SHOW_TEXT_ABOUT_MOBILE,
+  ABOUT_ME_TEXT
 };

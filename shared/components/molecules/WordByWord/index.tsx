@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { HEIGHT_ONE_FRAME_SCROLL } from "@/config/animations";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import { m } from "@/shared/components/atoms/framer-motion";
@@ -29,7 +30,8 @@ const WordByWordAnimate = ({
   return (
     <m.div
       className="text-about-us absolute right-0 top-0 z-10 flex flex-wrap lg:max-w-[500px] xl:max-w-[681px]"
-      style={{ y: yText, x: xText }}>
+      style={{ y: yText, x: xText }}
+    >
       {words.map((word, keyWord) => {
         if (keyWord > 0) {
           lastIndex += words[keyWord - 1].length;

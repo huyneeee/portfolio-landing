@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 import Desktop from "./Desktop";
 import { useResponsive } from "@/shared/hooks/useResponsive";
 import { breakpoints } from "@/config/theme";
-import Mobile from "./Mobile";
+import MobileNonAnimation from "./MobileNonAnimation";
 
 const MainHero = () => {
   const isDesktop = useResponsive({
@@ -15,7 +15,7 @@ const MainHero = () => {
 
   const content = useMemo(() => {
     if (isDesktop) return <Desktop />;
-    return <Mobile />;
+    return <MobileNonAnimation />;
   }, [isDesktop]);
 
   return content;

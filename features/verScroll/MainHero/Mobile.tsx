@@ -3,14 +3,15 @@ import Model3DSpin from "../Model3D";
 
 const Mobile = () => {
   return (
-    <div className="mt-[-66px] flex h-screen w-full flex-col justify-between py-[100px]">
+    <div className="mt-[-66px] flex h-svh w-full flex-col justify-between py-[100px]">
       <div>
         <h3 className="text-main-hero flex h-fit max-w-[335px] items-center">
           hello
           <svg
             fill="none"
             className="mb-[3px] ml-3 h-full max-h-[0.7em] w-auto"
-            viewBox="0 0 137 115">
+            viewBox="0 0 137 115"
+          >
             <rect width="25" height="115" fill="#F9FDFE"></rect>
             <rect width="10" height="115" x="64" fill="#F9FDFE"></rect>
             <rect width="7" height="115" x="86" fill="#F9FDFE"></rect>

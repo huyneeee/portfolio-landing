@@ -1,4 +1,4 @@
-import { LazyMotion } from "framer-motion";
+import { LazyMotion, AnimatePresence } from "framer-motion";
 import { PropsWithChildren } from "react";
 
 // Make sure to return the specific export containing the feature bundle.
@@ -8,7 +8,7 @@ const loadFeatures = () => import("../../lib/features.js").then((res) => res.def
 export function LazyMotionContainer(props: PropsWithChildren) {
   return (
     <LazyMotion features={loadFeatures} strict>
-      {props.children}
+      <AnimatePresence>{props.children}</AnimatePresence>
     </LazyMotion>
   );
 }

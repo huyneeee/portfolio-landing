@@ -1,7 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-// import CursorCustom from "@/shared/components/molecules/Cursor";
 
 const MainLayout = ({ children }: PropsWithChildren) => {
   return (
@@ -9,7 +8,6 @@ const MainLayout = ({ children }: PropsWithChildren) => {
       <Header />
       {children}
       <Footer />
-      {/* <CursorCustom /> */}
     </main>
   );
 };

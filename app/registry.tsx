@@ -9,9 +9,7 @@ export const Registry = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const lenis = new Lenis();
 
-    lenis.on("scroll", (e: any) => {
-      console.log("e", e.targetScroll);
-    });
+    lenis.on("scroll", () => {});
 
     function raf(time: any) {
       lenis.raf(time);

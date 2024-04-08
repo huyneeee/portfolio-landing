@@ -13,6 +13,7 @@ const urlImages = LANDING_URL + "/opengraph-image.png";
 const urlImageTW = LANDING_URL + "/twitter-image.png";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(LANDING_URL),
   title: "Portfolio",
   description: "Portfolio made by huyneeee",
   openGraph: {

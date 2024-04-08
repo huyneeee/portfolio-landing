@@ -1,6 +1,9 @@
 import MainLayout from "@/layouts/MainLayout";
 import TextUnderlineHoverEffect from "@/shared/components/atoms/framer-motion/HoverTextUnderline";
 import TimeLine from "@/shared/components/organisms/TimeLine";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {};
 
 export default async function AboutPage() {
   return (

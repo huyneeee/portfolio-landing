@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { HEIGHT_ONE_FRAME_SCROLL } from "@/config/animations";
 import { HEIGHT_HEADER, PADDING_LAYOUT } from "@/config/layout";
 import { WIDTH_AVATAR } from "@/constant/about";
