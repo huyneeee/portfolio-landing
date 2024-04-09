@@ -8,7 +8,7 @@ export const metadata: Metadata = {};
 export default async function AboutPage() {
   return (
     <MainLayout>
-      <section className="flex min-h-[600px] w-full max-lg:flex-col">
+      <section className="flex w-full max-lg:flex-col lg:min-h-[600px]">
         <div className="mt-10 flex grow flex-col pr-0 lg:p-20 lg:pb-10">
           <h1 className="text-5xl font-medium uppercase text-main-white lg:text-9xl">about me</h1>
 

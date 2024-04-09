@@ -45,7 +45,7 @@ const Hamburger = ({ open = false, onToggle }: { open: boolean; onToggle: VoidFu
         <m.path
           variants={variants.path1}
           stroke="#D6D8DA"
-          stroke-linecap="round"
+          strokeLinecap="round"
           animate={animate}
           d="M1 4h22"
         ></m.path>
@@ -53,7 +53,7 @@ const Hamburger = ({ open = false, onToggle }: { open: boolean; onToggle: VoidFu
           variants={variants.path2}
           animate={animate}
           stroke="#D6D8DA"
-          stroke-linecap="round"
+          strokeLinecap="round"
           d="M1 19h22"
         ></m.path>
         <m.rect
