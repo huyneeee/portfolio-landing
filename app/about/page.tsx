@@ -8,8 +8,8 @@ export const metadata: Metadata = {};
 export default async function AboutPage() {
   return (
     <MainLayout>
-      <section className="flex w-full max-lg:flex-col lg:min-h-[600px]">
-        <div className="mt-10 flex grow flex-col pr-0 lg:p-20 lg:pb-10">
+      <section className="mb-20 flex min-h-svh w-full max-lg:flex-col lg:min-h-[600px]">
+        <div className="mt-10 flex flex-col pr-0 lg:grow lg:p-20 lg:pb-10">
           <h1 className="text-5xl font-medium uppercase text-main-white lg:text-9xl">about me</h1>
 
           <div className="mt-auto flex w-fit flex-col max-lg:mt-5">

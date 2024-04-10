@@ -9,8 +9,8 @@ import { LANDING_URL } from "@/config/environment";
 const title = "Portfolio made by Huyneeee";
 const description = `Welcome to Huyneeee's portfolio website. I specialize in creating dynamic and interactive websites that captivate users and deliver seamless experiences. With expertise in frontend and backend technologies, I craft responsive designs, optimize performance, and ensure accessibility to reach a wider audience.`;
 
-const urlImages = LANDING_URL + "/opengraph-image.png";
-const urlImageTW = LANDING_URL + "/twitter-image.png";
+const urlImages = LANDING_URL + "/images/opengraph-image.png";
+const urlImageTW = LANDING_URL + "/images/twitter-image.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(LANDING_URL),
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     images: urlImageTW
   },
   icons: {
-    icon: "/favicon.png",
-    apple: "/apple-touch-icon.png",
-    shortcut: "/favicon.png"
+    icon: "/images/favicon.png",
+    apple: "/images/apple-touch-icon.png",
+    shortcut: "/images/favicon.png"
   }
 };
 
