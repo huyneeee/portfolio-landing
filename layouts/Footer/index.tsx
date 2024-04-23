@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Process from "./Process";
 import Hamburger from "./Hamburger";
 import MenuMobile from "./MenuMobile";
+import TextWave from "@/shared/components/molecules/TextWave";
 
 const Footer = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ const Footer = () => {
           Personal portfolio © 2024
         </Link>
         <Link href="/about" className="w-fit text-sm font-medium text-main-white max-lg:hidden">
-          About me
+          <TextWave text="About me" />
         </Link>
         <a
           href="/others/cv.pdf"
