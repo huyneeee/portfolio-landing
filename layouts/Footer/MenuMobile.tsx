@@ -47,13 +47,13 @@ const MenuMobile = ({ open = false, onToggle }: { open: boolean; onToggle: VoidF
         <div className="menu__item mt-5 flex flex-col gap-2">
           <p
             onClick={() => handleChangeRouter("/")}
-            className="text-4xl font-medium uppercase text-main-white"
+            className="cursor-pointer text-4xl font-medium uppercase text-main-white"
           >
             Main
           </p>
           <p
             onClick={() => handleChangeRouter("/about")}
-            className="text-4xl font-medium uppercase text-main-white"
+            className="cursor-pointer text-4xl font-medium uppercase text-main-white"
           >
             About
           </p>
