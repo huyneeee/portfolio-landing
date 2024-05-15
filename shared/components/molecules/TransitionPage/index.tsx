@@ -5,19 +5,24 @@ import { m } from "../../atoms/framer-motion";
 const ItemRow = ({ index }: { index: number }) => {
   return (
     <m.div
-      initial={{}}
+      initial={{
+        width: "0%"
+      }}
       animate={{
         width: "100%",
-        backgroundColor: "#ff5555",
+        backgroundColor: "#fff",
         position: "relative",
-        zIndex: "10000",
-        transition: {
-          delay: index * 0.2,
-          duration: 0.3,
-          type: "spring",
-          stiffness: 50,
-          restDelta: 0.2
-        }
+        zIndex: 999999999
+      }}
+      transition={{
+        repeatType: "reverse",
+        repeat: 1,
+        repeatDelay: 0.3,
+        delay: index * 0.2,
+        duration: 0.3,
+        type: "spring",
+        stiffness: 50,
+        restDelta: 0.2
       }}
       className="flex h-1/5 w-full"
     ></m.div>

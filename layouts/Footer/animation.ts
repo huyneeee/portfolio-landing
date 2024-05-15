@@ -7,13 +7,11 @@ const staggerMenuItems = (open: boolean) =>
 const variantsMenu = {
   hidden: {
     height: 0,
-    opacity: 0,
-    padding: 0
+    opacity: 0
   },
   show: {
     height: "60vh",
-    opacity: 1,
-    padding: "15px 0px"
+    opacity: 1
   }
 };
 
@@ -23,7 +21,7 @@ export default function useMenuAnimation(isOpen: boolean) {
   useEffect(() => {
     animate(".menu", isOpen ? variantsMenu.show : variantsMenu.hidden, {
       duration: 0.5,
-      delay: isOpen ? 0 : 1.05
+      delay: isOpen ? 0 : 0.75
     });
     animate(
       ".menu__item",
@@ -43,5 +41,7 @@ export default function useMenuAnimation(isOpen: boolean) {
     );
   }, [isOpen]);
 
-  return scope;
+  return {
+    scope
+  };
 }

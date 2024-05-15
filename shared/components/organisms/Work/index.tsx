@@ -18,7 +18,7 @@ const Works = () => {
       <h1 className="pb-4 text-center text-6xl font-medium text-main-white lg:py-6 lg:text-9xl">
         WORKS
       </h1>
-      <div className="relative mb-3 flex h-[300px] w-full lg:mb-4 lg:h-[600px]">
+      <div className="relative mb-3 flex h-[200px] w-full lg:mb-4 lg:h-[600px]">
         <FadeInBox
           className="h-full w-full"
           variants={variants}
@@ -33,7 +33,7 @@ const Works = () => {
           />
         </FadeInBox>
       </div>
-      <div className="flex h-[600px] gap-3 max-lg:flex-col lg:h-[400px] lg:gap-4">
+      <div className="flex h-[400px] gap-3 max-lg:flex-col lg:gap-4">
         <div className=" flex-1">
           <FadeInBox
             className="h-full w-full"

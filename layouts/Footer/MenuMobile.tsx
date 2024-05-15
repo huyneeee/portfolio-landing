@@ -1,8 +1,8 @@
 "use client";
 import TextUnderlineHoverEffect from "@/shared/components/atoms/framer-motion/HoverTextUnderline";
 import LinkSocial from "@/shared/components/molecules/LinkSocial";
-import Link from "next/link";
 import useMenuAnimation from "./animation";
+import { useRouter } from "next/navigation";
 
 const SOCIALS = [
   {
@@ -27,20 +27,36 @@ const SOCIALS = [
   }
 ];
 
-const MenuMobile = ({ open = false }) => {
-  const scope = useMenuAnimation(open);
+const TIME_CLOSE_MENU = 1200;
+
+const MenuMobile = ({ open = false, onToggle }: { open: boolean; onToggle: VoidFunction }) => {
+  const { scope } = useMenuAnimation(open);
+  const Router = useRouter();
+
+  const handleChangeRouter = (route: string) => {
+    onToggle();
+    setTimeout(() => {
+      Router.push(route);
+    }, TIME_CLOSE_MENU);
+  };
 
   return (
     <div ref={scope} className="relative z-[9999] lg:hidden">
       <div className="menu">
-        <p className="menu__item text-sm font-medium text-main-white">Nguyen Quang Huy ©</p>
+        <p className="menu__item pt-4 text-sm font-medium text-main-white">Nguyen Quang Huy ©</p>
         <div className="menu__item mt-5 flex flex-col gap-2">
-          <Link href={"/"} className="text-4xl font-medium uppercase text-main-white">
+          <p
+            onClick={() => handleChangeRouter("/")}
+            className="text-4xl font-medium uppercase text-main-white"
+          >
             Main
-          </Link>
-          <Link href={"/about"} className="text-4xl font-medium uppercase text-main-white">
+          </p>
+          <p
+            onClick={() => handleChangeRouter("/about")}
+            className="text-4xl font-medium uppercase text-main-white"
+          >
             About
-          </Link>
+          </p>
         </div>
 
         <div className="menu__item mt-20 flex items-center gap-1">

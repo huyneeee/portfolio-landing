@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <footer className="footer fixed bottom-[10px] left-[15px] z-[9999] overflow-hidden rounded-[20px] border border-main-lightgray bg-black pl-[15px] lg:left-[40px] lg:pl-[30px]">
-      <MenuMobile open={open} />
+      <MenuMobile open={open} onToggle={handleToggle} />
       <div className="relative z-[9999] flex h-[60px] w-full items-center justify-between">
         <Hamburger open={open} onToggle={handleToggle} />
         <Link

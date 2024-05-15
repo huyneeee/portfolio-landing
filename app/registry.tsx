@@ -4,6 +4,7 @@ import { LazyMotionContainer } from "@/shared/container/LazyMotionContainer";
 import { WindowSizeCtxProvider } from "@/shared/contexts/WindowSizeCtx";
 import Lenis from "@studio-freight/lenis";
 import { PropsWithChildren, useEffect } from "react";
+import MainLayout from "@/layouts/MainLayout";
 
 export const Registry = ({ children }: PropsWithChildren) => {
   useEffect(() => {
@@ -21,7 +22,9 @@ export const Registry = ({ children }: PropsWithChildren) => {
 
   return (
     <WindowSizeCtxProvider>
-      <LazyMotionContainer>{children}</LazyMotionContainer>
+      <LazyMotionContainer>
+        <MainLayout>{children}</MainLayout>
+      </LazyMotionContainer>
     </WindowSizeCtxProvider>
   );
 };
