@@ -1,4 +1,4 @@
-import { stagger, useAnimate } from "framer-motion";
+import { stagger, useAnimate } from "motion/react";
 import { useEffect } from "react";
 
 const staggerMenuItems = (open: boolean) =>

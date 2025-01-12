@@ -16,19 +16,16 @@ const nextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'i.imgur.com'
+        protocol: "https",
+        hostname: "i.imgur.com"
       }
-    ],
+    ]
   },
-  output: 'standalone',
-  experimental: {
-    instrumentationHook: true,
-  },
+  output: "standalone"
 };
 
 export default nextConfig;

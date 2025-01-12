@@ -12,7 +12,6 @@ const Desktop = () => {
   const { widthAvatar, yImageAvatar, xImageAvatar, opacityAvatar, heightAvatar, heightScroll } =
     motionAvatarDesktop();
   const { xText, yText } = motionTextDesktop();
-
   return (
     <div
       className="relative w-full"

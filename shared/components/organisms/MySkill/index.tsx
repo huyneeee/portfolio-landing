@@ -2,7 +2,7 @@
 import { Engine, Render } from "matter-js";
 import { useEffect, useRef } from "react";
 import { MatterUtils } from "./matter";
-import { useInView } from "framer-motion";
+import { useInView } from "motion/react";
 
 const MySkill = () => {
   const scene = useRef<HTMLDivElement>(null);

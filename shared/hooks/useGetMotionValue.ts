@@ -1,4 +1,5 @@
-import { MotionValue } from "framer-motion";
+"use client";
+import { MotionValue } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function useGetMotionValue<T = number>(

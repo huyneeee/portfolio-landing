@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { HEIGHT_ONE_FRAME_SCROLL } from "@/config/animations";
-import { MotionValue, useScroll, useTransform } from "framer-motion";
+import { MotionValue, useScroll, useTransform } from "motion/react";
 import { m } from "@/shared/components/atoms/framer-motion";
 
 type IPropsWordByWordAnimate = {

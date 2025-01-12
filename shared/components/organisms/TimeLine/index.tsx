@@ -1,4 +1,4 @@
-import TimeLineItem from "../../molecules/TimeLineItem";
+import TimeLineItem from "@/shared/components/molecules/TimeLineItem";
 
 const DATA = [
   {

@@ -5,7 +5,7 @@ import { WIDTH_AVATAR } from "@/constant/about";
 import { MAX_FONT, MAX_WIDTH_BOX, MIN_FONT, MIN_WIDTH_BOX } from "@/constant/mainhero";
 import { useWindowSizeCtx } from "@/shared/contexts/WindowSizeCtx";
 import useGetMotionValue from "@/shared/hooks/useGetMotionValue";
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "motion/react";
 
 const inputRange = [0, HEIGHT_ONE_FRAME_SCROLL];
 const inputRangeXAxisTF = [HEIGHT_ONE_FRAME_SCROLL, 2 * HEIGHT_ONE_FRAME_SCROLL];

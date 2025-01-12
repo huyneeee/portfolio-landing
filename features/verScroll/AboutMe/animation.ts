@@ -15,7 +15,7 @@ import {
 import { MARGIN_TOP_TEXT_RIGHT } from "@/constant/mainhero";
 import { useWindowSizeCtx } from "@/shared/contexts/WindowSizeCtx";
 import useGetMotionValue from "@/shared/hooks/useGetMotionValue";
-import { useMotionValue, useScroll, useTransform } from "framer-motion";
+import { useMotionValue, useScroll, useTransform } from "motion/react";
 
 const rangeHeightMainHero = [0, HEIGHT_ONE_FRAME_SCROLL];
 const endStateScrollMobile = HEIGHT_ONE_FRAME_SCROLL * 1.6;

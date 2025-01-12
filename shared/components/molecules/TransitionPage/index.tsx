@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "../../atoms/framer-motion";
+import { m } from "@/shared/components/atoms/framer-motion";
 
 const ItemRow = ({ index }: { index: number }) => {
   return (

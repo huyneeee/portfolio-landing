@@ -1,5 +1,5 @@
-import FadeInBox from "../../atoms/framer-motion/FadeInBox";
-import Work from "../../molecules/Work";
+import FadeInBox from "@/shared/components/atoms/framer-motion/FadeInBox";
+import Work from "@/shared/components/molecules/Work";
 
 const variants = {
   hidden: {

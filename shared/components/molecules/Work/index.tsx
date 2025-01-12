@@ -1,8 +1,8 @@
 "use client";
 import { IconArrow } from "@/shared/assets/IconArrow";
-// import { useInView, useScroll, useTransform } from "framer-motion";
+// import { useInView, useScroll, useTransform } from "motion/react";
 import Link from "next/link";
-import { m } from "../../atoms/framer-motion";
+import { m } from "@/shared/components/atoms/framer-motion";
 // import useGetMotionValue from "@/shared/hooks/useGetMotionValue";
 // import { useEffect, useRef, useState } from "react";
 

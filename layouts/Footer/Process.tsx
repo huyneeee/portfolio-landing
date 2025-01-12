@@ -1,6 +1,6 @@
 "use client";
 import { m } from "@/shared/components/atoms/framer-motion";
-import { useScroll, useSpring } from "framer-motion";
+import { useScroll, useSpring } from "motion/react";
 import React from "react";
 
 const Process = () => {

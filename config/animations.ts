@@ -1,4 +1,4 @@
-import { AnimationProps } from "framer-motion";
+import { AnimationProps } from "motion/react";
 
 const HEIGHT_RANGE_SCROLL = {
   state_1: {

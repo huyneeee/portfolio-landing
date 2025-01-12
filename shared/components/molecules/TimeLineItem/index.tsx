@@ -1,6 +1,6 @@
 import React from "react";
-import FadeInBox from "../../atoms/framer-motion/FadeInBox";
-import { AnimationProps } from "framer-motion";
+import FadeInBox from "@/shared/components/atoms/framer-motion/FadeInBox";
+import { AnimationProps } from "motion/react";
 
 type IPropsTimeLineItem = {
   time: string;

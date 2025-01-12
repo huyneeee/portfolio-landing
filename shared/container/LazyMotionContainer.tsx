@@ -1,4 +1,4 @@
-import { LazyMotion, AnimatePresence } from "framer-motion";
+import { LazyMotion, AnimatePresence } from "motion/react";
 import { PropsWithChildren } from "react";
 
 // Make sure to return the specific export containing the feature bundle.

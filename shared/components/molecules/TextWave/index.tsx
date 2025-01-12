@@ -1,6 +1,6 @@
 "use client";
 import clsx from "clsx";
-import { stagger, useAnimate } from "framer-motion";
+import { stagger, useAnimate } from "motion/react";
 import React, { PropsWithChildren, useEffect, useState } from "react";
 
 const staggerCharacter = stagger(0.05, {});

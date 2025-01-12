@@ -2,7 +2,7 @@
 import React, { PropsWithChildren, useRef } from "react";
 import { m } from "..";
 import { TRANSITION_FADE_IN, VARIANTS_FADE_IN } from "@/config/animations";
-import { AnimationProps, useInView } from "framer-motion";
+import { AnimationProps, useInView } from "motion/react";
 
 type IPropsFadeInBox = AnimationProps & {
   className?: string;
