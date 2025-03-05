@@ -44,8 +44,8 @@ const Works = () => {
           >
             <Work
               srcImage="/images/image-6.jpg"
-              label="Sales Together / Affiliate"
-              link="https://sale-together.its-globaltek.com/home"
+              label="Wallacy / Crypto"
+              link="https://wallacy.io/"
             />
           </FadeInBox>
         </div>
@@ -59,8 +59,8 @@ const Works = () => {
           >
             <Work
               srcImage="/images/image-5.jpg"
-              label="Tiktak / Website NFT"
-              link="https://landing.tictak.io/"
+              label="ITS Global / IT Outsourcing"
+              link="https://its-global.vn/"
             />
           </FadeInBox>
         </div>
