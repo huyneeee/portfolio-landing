@@ -5,6 +5,7 @@ import "@/shared/styles/index.css";
 import { Registry } from "./registry";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LANDING_URL } from "@/config/environment";
+import { Analytics } from "@vercel/analytics/next";
 
 const title = "Portfolio made by Huyneeee";
 const description = `Welcome to Huyneeee's portfolio website. I specialize in creating dynamic and interactive websites that captivate users and deliver seamless experiences. With expertise in frontend and backend technologies, I craft responsive designs, optimize performance, and ensure accessibility to reach a wider audience.`;
@@ -46,6 +47,7 @@ export default function RootLayout({
       <body className={clsx(neueHaasFont.className, "bg-black")}>
         <Registry>{children}</Registry>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
