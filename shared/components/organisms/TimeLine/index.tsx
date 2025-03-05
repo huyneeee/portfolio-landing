@@ -2,7 +2,12 @@ import TimeLineItem from "../../molecules/TimeLineItem";
 
 const DATA = [
   {
-    time: "Sep 2022 - Present",
+    time: "Jun 2024 - Present",
+    nameCompany: "APPOTA JOIN STOCK COMPANY",
+    description: "Wallacy - a gamified multi-chain crypto wallet"
+  },
+  {
+    time: "Sep 2022 - May 2024",
     nameCompany: "PARKA SOLUTIONS",
     description:
       "Lucky is a product company based in the US. Lucky build the bridge between brands, retailers and their customers."
